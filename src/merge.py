@@ -15,8 +15,31 @@ def merge(x: list[int], y: list[int]) -> list[int]:
     z = []  # a new list to copy elements into
     # FIXME: fill out the loop so you merge the lists
     # until one of them is empty
-    while i < len(x) and j < len(y):
-        break  # FIXME: you shouldn't just break here
+    
+    for i in x:
+        for j in y:
+            if x[i] < y[j]:
+                z.append(x[i])
+                i += 1
+            else:
+                z.append(y[j])
+                j += 1 
+    print(z)
+    
+    
+    # print(i,j,z)
+    # while i < len(x) or j < len(y)+1:
+    #     if x[i] < y[j]:
+    #         z.append(x[i])
+    #         i += 1
+    #     else:
+    #         z.append(y[j])
+    #         j += 1 
+    #     print(i,j,z)
+    # FIXME: you shouldn't just break here
     # At least one of the lists is empty now. Copy the
     # remainder of the other into z.
     return z
+
+
+merge([1, 2, 4, 6], [1, 3, 4, 5])
